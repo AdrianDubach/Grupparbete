@@ -1,16 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace CombatSystem
 {
     class Style
     {
-        public static string BattleStance()
+        public static string BattleStance(string input)
         {
             Random rnd = new Random();
-            int style = rnd.Next(1, 4);  // 1 agressive-> 2 standard ->3defensive->
+            int style = 0;
+            if (input == "Dragon")
+            style = rnd.Next(1, 4);  // 1 agressive-> 2 standard ->3defensive->
+            if (input == "1")
+                style = 1;
+            if (input == "2")
+                style = 2;
+            if (input == "3")
+                style = 3;
+
+
             if (style == 1)
                 return "Agressive";
             if (style == 2)
@@ -54,19 +63,20 @@ namespace CombatSystem
 
         public static int Damage(int styleIncrease)
         {
+            Console.Clear();
             Random rnd = new Random();
             int damage = rnd.Next(1, 6);
             damage = damage * styleIncrease;
             if (damage > 13)
-                Console.WriteLine("Hahaa!" + damage +"damage! It was a critical strike!");
+                Console.WriteLine("Ouch, " + damage +"damage! It was a critical strike!");
             if (damage > 9 && damage < 14)
-                Console.WriteLine(damage +"damage! Solid strike!");
+                Console.WriteLine(damage +"damage! It was a solid strike!");
             if (damage > 5 && damage < 10)
                 Console.WriteLine(damage + "damage! It's just a flesh wound!");
             if (damage > 0 && damage < 6)
-                Console.WriteLine("Argh!" + damage + "damage! It was a Glancing blow!");
+                Console.WriteLine(damage + "damage! It was a Glancing blow!");
             if (damage == 0)
-                Console.WriteLine(damage + "damage!Goshdarnit I missed!");
+                Console.WriteLine(damage + "damage! The Dragon Missed");
 
                 return damage;
         }

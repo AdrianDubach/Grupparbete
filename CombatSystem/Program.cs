@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace CombatSystem
@@ -15,26 +14,33 @@ namespace CombatSystem
             while (lifeDragon > 0 || lifeKnight > 0)
             {
                 Style combat = new Style();
-                string knightStyle = Style.BattleStance();
+                //string knightStyle = Style.BattleStance();
 
-                Console.WriteLine("Knights stance is " + knightStyle);
+                //Console.WriteLine("Knights stance is " + knightStyle);
 
-                string dragonStyle = Style.BattleStance();
-                Console.WriteLine("Dragons stance is " + dragonStyle);
-                Console.WriteLine();
-                Console.WriteLine("The Knight attacks!");
+                string dragonStyle = Style.BattleStance("Dragon");
+                if (dragonStyle == "Agressive")
+                    Console.WriteLine("The Dragon Looks agressive");
+                if (dragonStyle == "Standard")
+                    Console.WriteLine("The Dragon looks calculative");
+                    if (dragonStyle == "Defensive")
+                    Console.WriteLine("The Dragon looks startled");
 
-                damage = Style.Damage(Style.StyleSwitch(knightStyle, dragonStyle));
-                lifeDragon = Life.DamageDone(damage, lifeDragon);
-                Console.WriteLine("Dragon has " + lifeDragon + " life remaining");
-                if (lifeDragon <= 75 && lifeDragon >= 51)
-                    Console.WriteLine("Foolish human, I will burn you alive!");
 
-                if (lifeDragon <= 50 && lifeDragon >= 26)
-                    Console.WriteLine("GRARARRRARARAR, YOU ANGER ME!");
+                        Console.WriteLine("choose what to do! Dodge(1) Run(2) Defend with shield(3)");
+                string knightStyle = Style.BattleStance(Console.ReadLine());
 
-                if (lifeDragon <= 25 && lifeDragon >= 0)
-                    Console.WriteLine(".... WHAT IS THIS!?!");
+                //damage = Style.Damage(Style.StyleSwitch(knightStyle, dragonStyle));
+                //lifeDragon = Life.DamageDone(damage, lifeDragon);
+                //Console.WriteLine("Dragon has " + lifeDragon + " life remaining");
+                //if (lifeDragon <= 75 && lifeDragon >= 51)
+                //    Console.WriteLine("Foolish human, I will burn you alive!");
+
+                //if (lifeDragon <= 50 && lifeDragon >= 26)
+                //    Console.WriteLine("GRARARRRARARAR, YOU ANGER ME!");
+
+                //if (lifeDragon <= 25 && lifeDragon >= 0)
+                //    Console.WriteLine(".... WHAT IS THIS!?!");
                 Console.WriteLine();
                 Console.WriteLine("The Dragon attacks!");
 
