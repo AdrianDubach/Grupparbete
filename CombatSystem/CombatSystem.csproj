@@ -5,4 +5,8 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Include="C:\Users\Adrian\Desktop\Kod\Spel.cs" Link="Spel.cs" />
+  </ItemGroup>
+
 </Project>

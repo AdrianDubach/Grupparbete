@@ -65,7 +65,7 @@ namespace CombatSystem
         {
             Console.Clear();
             Random rnd = new Random();
-            int damage = rnd.Next(1, 6);
+            int damage = rnd.Next(1, 7);
             damage = damage * styleIncrease;
             if (damage > 13)
                 Console.WriteLine("Ouch, " + damage +"damage! It was a critical strike!");

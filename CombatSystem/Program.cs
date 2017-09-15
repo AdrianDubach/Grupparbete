@@ -10,17 +10,15 @@ namespace CombatSystem
         {    /* här försöker jag typ simulera vad som skulle hända
                vad som skulle hända om man går in i en array ruta
                där draken finns*/
-            Combat fight = new Combat();
-            bool attacked = false;
-            int test;
-            Console.WriteLine("press 1 to start an engagement");
-            test = int.Parse(Console.ReadLine());
+            ArrayGameboard.MetoderOchArrays play = new ArrayGameboard.MetoderOchArrays();
 
-            if (test == 1)
-                attacked = true;
+            int life = 100;
+              life =   ArrayGameboard.MetoderOchArrays.GameBoard();
 
-            if(attacked == true)
-            Combat.Drakfight();
+            if (life <= 0)
+                Console.WriteLine("You diedededed");
+            if (life >= 0)
+                Console.WriteLine("you're even alive!");
 
             Console.Read();
 
@@ -28,3 +26,4 @@ namespace CombatSystem
         }
     }
 }
+
